@@ -1,0 +1,33 @@
+<li class="user-menu-item">
+  <input class="toggle-box" id="steam-settings" type="checkbox">
+  <label for="steam-settings" class="noselect">Steam Settings</label>
+  <div class="sub-items-wrapper">
+    <ul class="sub-items">
+      <li class="clearfix">
+        <p id="menu-image"><i class="fa fa-picture-o" aria-hidden="true"></i> Image:</p>
+        <label class="noselect">
+          <img id="profile-img" src="<%= user.photo %>"></img>
+        </label>
+      </li>
+      <li class="clearfix">
+        <p id="menu-name"><i class="fa fa-user" aria-hidden="true"></i> Name:</p>
+        <label class="noselect">
+          <p id="steam-name"><%= user.name %></p>
+        </label>
+      </li>
+      <li class="clearfix">
+        <p id="menu-trade-url"><i class="fa fa-info" aria-hidden="true"></i> Trade URL:</p>
+        <% if (user.trade_url) { %>
+          <label class="noselect">
+            <p id="steam-url-edit" class="steam-url" data-url="<%- user.trade_url %>">EDIT</p>
+          </label>
+        <% } else { %>
+          <label class="noselect">
+            <p id="steam-url-set" class="steam-url">SET</p>
+          </label>
+        <% } %>
+      </li>
+    </ul>
+    <button id="steam-settings-refresh" type="submit">Refresh</button>
+  </div>
+</li>
